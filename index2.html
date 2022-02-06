@@ -1,0 +1,82 @@
+<!--  All HTML files begin with the following line: -->
+<!DOCTYPE html>
+<!-- This indicates that the rest of the lines that follow are to be interpreted as HTML. It tells the browser about what document type to expect. -->
+
+<!-- All text enclosed in angled brackets are known as HTML element tags. There are usually, but not always, starting and closing element "tags", each representing a HTML element.
+The <html> element is known as the root element of a HTML page. All other elements are encased within it. -->
+<html>
+  <!-- The <head> element contains meta information about the HTML page, information that is not rendered or displayed by the browser -->
+  <head>
+    <!-- The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab) and is the default name given to a bookmark of a webpage. -->
+    <title>Basics</title>
+    <!-- The <link> element specifies a relationship between this HTML page and an external resource, namely the styles.css file here. In this case, we are linking a stylesheet which is a CSS file containing information relating to the layout and style of the webpage. The syntax within the styles.css file is also referred to as CSS - Cascading Style Sheets. -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <!-- The <body> element defines the document's body, and is a container for all the visible contents that will be rendered by the browser.  -->
+  <body>
+    <!-- The <h1> element defines a large heading. There are 6 pre-set header elements, <h1> to <h6> -->
+    <h1 id="header">Basics! 🚀</h1>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <!-- Q1 -->
+    <div id="container">
+      <!-- The <h2> element is a smaller heading than the <h1> tag we saw earlier. -->
+      <h2>Q1. If we input the number of pizzas we have, return the number of slices you would have if each pizza could be split into 8 slices.</h2>
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Number Of Pizzas:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="input-field-q1" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="submit-button-q1">Submit</button>
+      <p>Pizza Slices:</p>
+      <div id="output-div-q1"></div>
+    </div>
+    <!-- Q2 -->
+    <div id="container">
+      <h2>Q2. Fahrenheit to Celcius</h2>
+      <p>Temperature in Fahrenheit:</p>
+      <input id="input-field-q2" />
+      <br />
+      <button id="submit-button-q2">Submit</button>
+      <p>Temperature in Celcius:</p>
+      <div id="output-div-q2"></div>
+    </div>
+    <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
+    <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
+    <!-- The following line imports all code written in the script.js file -->
+    <script src="script2.js"></script>
+    <!-- Define button click functionality -->
+    <script>
+      // Declare and define a variable that represents the Submit Button
+      // Here, we target the button that has an ID of "#submit-button-q1", so we know this button is for Question 1.
+      // We also appropriately name this buttonQ1 so we do not get confused with buttons for other questions.
+      var buttonQ1 = document.querySelector("#submit-button-q1");
+      // When the submit button is clicked, access the text entered by the user in the input field
+      // And pass it as an input parameter to the main function as defined in script.js
+      buttonQ1.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#input-field-q1");
+        // Store the output of pizzaSlices() in a new variable
+
+        var result = pizzaSlices(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#output-div-q1");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+      var buttonQ2 = document.querySelector("#submit-button-q2");
+      buttonQ2.addEventListener("click", function () {
+        var input = document.querySelector("#input-field-q2");
+        var result = pizzaSlices(input.value);
+        var output = document.querySelector("#output-div-q2");
+        output.innerHTML = result;
+        input.value = "";
+      });
+    </script>
+  </body>
+</html>
