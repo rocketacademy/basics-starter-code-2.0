@@ -18,7 +18,7 @@ body {
   text-align: center;
 }
 
-#container {
+.container {
   background-color: #ffffff;
   margin: 40px auto;
   max-width: 800px;
@@ -42,9 +42,14 @@ button {
   padding: 0 6px;
 }
 
-#output-div {
+.output-div {
   background-color: lightgrey;
   margin: 20px auto;
   padding: 20px;
   width: 100%;
+}
+
+.divider {
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
