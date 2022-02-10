@@ -33,3 +33,9 @@ var dice4DMain = function (input) {
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
+
+var secretWordTwice2Main = function (input) {
+  // Complete the More Comfortable: Secret Word Twice in a Row 2 exercise below with secretWordTwice2Main as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};

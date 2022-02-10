@@ -185,6 +185,36 @@ The <html> element is known as the root element of a HTML page. All other elemen
       <p>Output:</p>
       <div class="output-div" id="dice-4d-output-div"></div>
     </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>More Comfortable: Secret Word Twice in a Row 2</h2>
+      <div class="instructions-text">
+        <p>Update Secret Word with the following additional rules.</p>
+        <!-- The <ol> tag represents an ordered list, where items in the list can be ordered numerically. -->
+        <ol>
+          <!-- The <li> tag represents a list item, which has to be contained in an ordered list (<ol>) or an unordered list (<ul>). -->
+          <li>The player must guess correctly twice in a row to win</li>
+          <li>
+            Secret words cannot be repeated 2 guesses in a row. E.g. the secret
+            word cannot be "banana" for 2 player guesses in a row. If the secret
+            word for the 1st guess were "banana", the secret word for the 2nd
+            guess would have to be either "chisel" or "faucet".
+          </li>
+        </ol>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Guess the secret word:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="secret-word-twice-2-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="secret-word-twice-2-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="secret-word-twice-2-output-div"></div>
+    </div>
     <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
     <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
     <!-- The following line imports all code written in the script.js file -->
@@ -208,6 +238,9 @@ The <html> element is known as the root element of a HTML page. All other elemen
         "#dice-within-2-dice-submit-button"
       );
       var dice4DButton = document.querySelector("#dice-4d-submit-button");
+      var secretWordTwice2Button = document.querySelector(
+        "#secret-word-twice-2-submit-button"
+      );
 
       // When the submit button is clicked, access the text entered by the user in the corresponding input field for the exercise
       // And pass it as an input parameter to the various main function(s) as defined in script.js
@@ -293,6 +326,20 @@ The <html> element is known as the root element of a HTML page. All other elemen
 
         // Display result in output element
         var output = document.querySelector("#dice-4d-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      secretWordTwice2Button.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#secret-word-twice-2-input-field");
+        // Store the output of the main function in a new variable
+        var result = secretWordTwice2Main(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#secret-word-twice-2-output-div");
         output.innerHTML = result;
 
         // Reset input value
