@@ -19,16 +19,123 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <h1 id="header">🚀 Basics Day 4: In-Class Exercises 🚀</h1>
     <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
     <div class="container">
+      <h2>Base: Emoji Drawing Number of Characters</h2>
+      <div class="instructions-text">
+        <p>Use loops to create an app that draws emojis into the grey box.</p>
+        <p>
+          The user will enter a number of characters to display on the screen.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
       <!-- The <p> tag defines a paragraph element. -->
-      <p>Input:</p>
+      <p>Enter the number of characters to display:</p>
       <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
-      <input id="input-field" />
+      <input id="emoji-number-characters-input-field" />
       <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
       <br />
       <!-- The <button> tag represents.. you guessed it! a button. -->
-      <button id="submit-button">Submit</button>
+      <button id="emoji-number-characters-submit-button">Submit</button>
       <p>Output:</p>
-      <div class="output-div" id="output-div"></div>
+      <div class="output-div" id="emoji-number-characters-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Base: Emoji Drawing Square</h2>
+      <div class="instructions-text">
+        <p>
+          The user will enter the dimensions of a square to display on the
+          screen.
+        </p>
+        <p>
+          Use a loop within a loop and the <code>&lt;br /&gt;</code>
+          HTML tag in your output to create the square.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Enter the dimensions of a square:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="emoji-square-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="emoji-square-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="emoji-square-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Comfortable: Emoji Drawing Triangle</h2>
+      <div class="instructions-text">
+        <p>
+          The user will enter the dimensions of a triangle to display on the
+          screen.‌
+        </p>
+        <p>
+          Use a loop within a loop and the <code>&lt;br /&gt;</code>
+          HTML tag in your output to create the triangle.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Enter the dimensions of a triangle:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="emoji-triangle-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="emoji-triangle-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="emoji-triangle-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>More Comfortable: Outline Square</h2>
+      <div class="instructions-text">
+        <p>
+          The user will enter the dimensions of a square to display on the
+          screen. The square is outlined by a different character.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Enter the dimensions of a square:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="emoji-outline-square-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="emoji-outline-square-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="emoji-outline-square-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>More Comfortable: Center Square</h2>
+      <div class="instructions-text">
+        <p>
+          The user will enter the dimensions of a square to display on the
+          screen. The square is outlined by a different character and there is
+          another different character in the center. The app doesn't allow
+          dimensions that will not allow the center character.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Enter the dimensions of a square:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="emoji-center-square-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="emoji-center-square-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="emoji-center-square-output-div"></div>
     </div>
     <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
     <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
@@ -36,18 +143,93 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <script src="script.js"></script>
     <!-- Define button click functionality -->
     <script>
-      // Declare and define a variable that represents the Submit Button
-      var button = document.querySelector("#submit-button");
+      // Declare and define variables that represents the Submit Button for each exercise
+      var emojiNumberCharactersButton = document.querySelector(
+        "#emoji-number-characters-submit-button"
+      );
+      var emojiSquareButton = document.querySelector(
+        "#emoji-square-submit-button"
+      );
+      var emojiTriangleButton = document.querySelector(
+        "#emoji-triangle-submit-button"
+      );
+      var emojiOutlineSquareButton = document.querySelector(
+        "#emoji-outline-square-submit-button"
+      );
+      var emojiCenterSquareButton = document.querySelector(
+        "#emoji-center-square-submit-button"
+      );
+
       // When the submit button is clicked, access the text entered by the user in the input field
       // And pass it as an input parameter to the main function as defined in script.js
-      button.addEventListener("click", function () {
+      emojiNumberCharactersButton.addEventListener("click", function () {
         // Set result to input value
-        var input = document.querySelector("#input-field");
-        // Store the output of main() in a new variable
-        var result = main(input.value);
+        var input = document.querySelector(
+          "#emoji-number-characters-input-field"
+        );
+        // Store the output of the main function in a new variable
+        var result = emojiNumberCharactersMain(input.value);
 
         // Display result in output element
-        var output = document.querySelector("#output-div");
+        var output = document.querySelector(
+          "#emoji-number-characters-output-div"
+        );
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      emojiSquareButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#emoji-square-input-field");
+        // Store the output of the main function in a new variable
+        var result = emojiSquareMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#emoji-square-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      emojiTriangleButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#emoji-triangle-input-field");
+        // Store the output of the main function in a new variable
+        var result = emojiTriangleMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#emoji-triangle-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      emojiOutlineSquareButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#emoji-outline-square-input-field");
+        // Store the output of the main function in a new variable
+        var result = emojiOutlineSquareMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#emoji-outline-square-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      emojiCenterSquareButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#emoji-center-square-input-field");
+        // Store the output of the main function in a new variable
+        var result = emojiCenterSquareMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#emoji-center-square-output-div");
         output.innerHTML = result;
 
         // Reset input value
