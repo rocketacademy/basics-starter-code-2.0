@@ -27,3 +27,27 @@ var emojiCenterSquareMain = function (input) {
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
+
+var multiDiceBaseMain = function (input) {
+  // Complete the Base: Multi-Dice Game exercise below with multiDiceBaseMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var multiDiceMultiRoundMain = function (input) {
+  // Complete the More Comfortable: Multi-Round Multi-Dice Game exercise below with multiDiceMultiRoundMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var multiDiceTwoPlayerMain = function (input) {
+  // Complete the More Comfortable: Two Player Multi-Round Multi-Dice Game exercise below with multiDiceTwoPlayerMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var multiDiceMultiPlayerMain = function (input) {
+  // Complete the More Comfortable: Multi-Player Multi-Round Multi-Dice Game exercise below with multiDiceMultiPlayerMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
