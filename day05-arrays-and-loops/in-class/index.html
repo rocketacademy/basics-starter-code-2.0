@@ -19,16 +19,160 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <h1 id="header">🚀 Basics Day 5: In-Class Exercises 🚀</h1>
     <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
     <div class="container">
+      <h2>Base: Mad Libs Adjectives</h2>
+      <div class="instructions-text">
+        <!-- The <ol> tag represents an ordered list, where items in the list can be ordered numerically. -->
+        <ol>
+          <!-- The <li> tag represents a list item, which has to be contained in an ordered list (<ol>) or an unordered list (<ul>). -->
+          <li>
+            When the app loads, the user can input 1 adjective at a time to
+            store in the app. Store the user-inputted adjectives in a global
+            array variable.
+          </li>
+          <li>
+            When the user inputs the word "create" the app completes the Mad Lib
+            with a random word from the user-inputted adjectives array and
+            outputs the completed Mad Lib in the grey box.
+          </li>
+        </ol>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
       <!-- The <p> tag defines a paragraph element. -->
       <p>Input:</p>
       <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
-      <input id="input-field" />
+      <input id="mad-libs-adjectives-input-field" />
       <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
       <br />
       <!-- The <button> tag represents.. you guessed it! a button. -->
-      <button id="submit-button">Submit</button>
+      <button id="mad-libs-adjectives-submit-button">Submit</button>
       <p>Output:</p>
-      <div class="output-div" id="output-div"></div>
+      <div class="output-div" id="mad-libs-adjectives-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Comfortable: Popular Mad Libs</h2>
+      <div class="instructions-text">
+        <p>
+          Keep track of which words are selected. Create and allow the user to
+          switch to a new game mode that always shows a completed Mad Lib on
+          Submit using the set of words (verb, adjective, etc.) that the app has
+          (randomly) selected most often so far.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="mad-libs-popular-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="mad-libs-popular-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="mad-libs-popular-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Comfortable: Input and Create Mode</h2>
+      <div class="instructions-text">
+        <p>
+          When the app loads it starts in "input", or normal mode. In input
+          mode, the user can add adjectives to their adjectives list with each
+          Submit.
+        </p>
+        <p>
+          When the user inputs "create", change the game mode to create mode. In
+          create mode, each Submit prompts the app to complete your Mad Lib.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="mad-libs-input-create-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="mad-libs-input-create-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="mad-libs-input-create-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Comfortable: Input Multiple Words</h2>
+      <div class="instructions-text">
+        <p>
+          When the app loads, the user can input 1 or more adjectives to store
+          in the app with each Submit. To input more than 1 word for each
+          Submit, the user would give each word separated by a space, e.g.,
+          "green nice silly". We can use JavaScript's string
+          <code>split</code> method to split the input string into an array of
+          substrings.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="mad-libs-multiple-words-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="mad-libs-multiple-words-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="mad-libs-multiple-words-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>More Comfortable: Mad Libs Multiple Word Types</h2>
+      <div class="instructions-text">
+        <p>Update our Mad Lib to take additional word types.</p>
+        <p>
+          Create modes to input words from different word types, e.g.
+          exclamation, adverb, noun, and adjective. For each type, prompt the
+          user what type of word they should be entering. If it's too tedious to
+          support 4 word types, considering starting with 2 word types.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="mad-libs-multiple-types-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="mad-libs-multiple-types-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="mad-libs-multiple-types-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>More Comfortable: Sets of Mad Libs</h2>
+      <div class="instructions-text">
+        <p>Store an array of Mad Lib sentences in your app.</p>
+        <p>
+          Update create mode to pick a random Mad Lib sentence and set of words
+          and output the completed Mad Lib in the grey box on Submit.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="mad-libs-sets-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="mad-libs-sets-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="mad-libs-sets-output-div"></div>
     </div>
     <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
     <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
@@ -36,18 +180,118 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <script src="script.js"></script>
     <!-- Define button click functionality -->
     <script>
-      // Declare and define a variable that represents the Submit Button
-      var button = document.querySelector("#submit-button");
+      // Declare and define variables that represents the Submit Button for each exercise
+      var madLibsAdjectivesButton = document.querySelector(
+        "#mad-libs-adjectives-submit-button"
+      );
+      var madLibsPopularButton = document.querySelector(
+        "#mad-libs-popular-submit-button"
+      );
+      var madLibsInputCreateButton = document.querySelector(
+        "#mad-libs-input-create-submit-button"
+      );
+      var madLibsMultipleWordsButton = document.querySelector(
+        "#mad-libs-multiple-words-submit-button"
+      );
+      var madLibsMultipleTypesButton = document.querySelector(
+        "#mad-libs-multiple-types-submit-button"
+      );
+      var madLibsSetsButton = document.querySelector(
+        "#mad-libs-sets-submit-button"
+      );
+
       // When the submit button is clicked, access the text entered by the user in the input field
       // And pass it as an input parameter to the main function as defined in script.js
-      button.addEventListener("click", function () {
+      madLibsAdjectivesButton.addEventListener("click", function () {
         // Set result to input value
-        var input = document.querySelector("#input-field");
-        // Store the output of main() in a new variable
-        var result = main(input.value);
+        var input = document.querySelector("#mad-libs-adjectives-input-field");
+        // Store the output of the main function in a new variable
+        var result = madLibsAdjectivesMain(input.value);
 
         // Display result in output element
-        var output = document.querySelector("#output-div");
+        var output = document.querySelector("#mad-libs-adjectives-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      madLibsPopularButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#mad-libs-popular-input-field");
+        // Store the output of the main function in a new variable
+        var result = madLibsPopularMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#mad-libs-popular-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      madLibsInputCreateButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector(
+          "#mad-libs-input-create-input-field"
+        );
+        // Store the output of the main function in a new variable
+        var result = madLibsInputCreateMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector(
+          "#mad-libs-input-create-output-div"
+        );
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      madLibsMultipleWordsButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector(
+          "#mad-libs-multiple-words-input-field"
+        );
+        // Store the output of the main function in a new variable
+        var result = madLibsMultipleWordsMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector(
+          "#mad-libs-multiple-words-output-div"
+        );
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      madLibsMultipleTypesButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector(
+          "#mad-libs-multiple-types-input-field"
+        );
+        // Store the output of the main function in a new variable
+        var result = madLibsMultipleTypesMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector(
+          "#mad-libs-multiple-types-output-div"
+        );
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      madLibsSetsButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#mad-libs-sets-input-field");
+        // Store the output of the main function in a new variable
+        var result = madLibsSetsMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#mad-libs-sets-output-div");
         output.innerHTML = result;
 
         // Reset input value
