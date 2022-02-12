@@ -1,6 +1,7 @@
 /**
  * Base: Fahrenheit to Celsius
  */
+
 var fahrenheitToCelsiusMain = function (tempInFahrenheit) {
   // Complete the Base: Fahrenheit to Celsius exercise below with fahrenheitToCelsiusMain as the main function.
   var tempInCelsius = (tempInFahrenheit - 32) * (5 / 9);
@@ -118,6 +119,10 @@ var beerOrderMain = function (avgNumCustomersPerDay) {
   const numKegsPerQuarter = convertPintsToKegs(numPintsPerQuarter);
   return `The bar would need to buy ${numKegsPerQuarter} kegs of beer per quarter for an average of ${avgNumCustomersPerDay} customers per day.`;
 };
+
+/**
+ * More Comfortable: Cost of Cellular Data
+ */
 
 var cellularDataMain = function (numGbUsedPerMonth) {
   // Complete the More Comfortable: Cost of Cellular Data exercise below with cellularDataMain as the main function.
