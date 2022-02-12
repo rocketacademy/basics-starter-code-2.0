@@ -16,14 +16,14 @@ var madLibsMultipleWordsMain = function (input) {
   return myOutputValue;
 };
 
-var madLibsPopularMain = function (input) {
-  // Complete the Comfortable: Popular Mad Libs exercise below with madLibsPopularMain as the main function.
+var madLibsMultipleTypesMain = function (input) {
+  // Complete the More Comfortable: Mad Libs Multiple Word Types exercise below with madLibsMultipleTypesMain as the main function.
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
 
-var madLibsMultipleTypesMain = function (input) {
-  // Complete the More Comfortable: Mad Libs Multiple Word Types exercise below with madLibsMultipleTypesMain as the main function.
+var madLibsPopularMain = function (input) {
+  // Complete the More Comfortable: Popular Mad Libs exercise below with madLibsPopularMain as the main function.
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
