@@ -4,12 +4,6 @@ var madLibsAdjectivesMain = function (input) {
   return myOutputValue;
 };
 
-var madLibsPopularMain = function (input) {
-  // Complete the Comfortable: Popular Mad Libs exercise below with madLibsPopularMain as the main function.
-  var myOutputValue = 'hello world';
-  return myOutputValue;
-};
-
 var madLibsInputCreateMain = function (input) {
   // Complete the Comfortable: Input and Create Mode exercise below with madLibsInputCreateMain as the main function.
   var myOutputValue = 'hello world';
@@ -18,6 +12,12 @@ var madLibsInputCreateMain = function (input) {
 
 var madLibsMultipleWordsMain = function (input) {
   // Complete the Comfortable: Input Multiple Words exercise below with madLibsMultipleWordsMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var madLibsPopularMain = function (input) {
+  // Complete the Comfortable: Popular Mad Libs exercise below with madLibsPopularMain as the main function.
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
