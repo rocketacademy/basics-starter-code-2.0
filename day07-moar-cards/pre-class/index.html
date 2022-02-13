@@ -19,16 +19,71 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <h1 id="header">🚀 Basics Day 7: Pre-Class Exercises 🚀</h1>
     <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
     <div class="container">
+      <h2>Follow Along (Objects)</h2>
+      <div class="instructions-text">
+        <p>
+          Follow along and implement the High Card code in the Objects module to
+          get a working High Card game.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
       <!-- The <p> tag defines a paragraph element. -->
       <p>Input:</p>
       <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
-      <input id="input-field" />
+      <input id="follow-objects-input-field" />
       <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
       <br />
       <!-- The <button> tag represents.. you guessed it! a button. -->
-      <button id="submit-button">Submit</button>
+      <button id="follow-objects-submit-button">Submit</button>
       <p>Output:</p>
-      <div class="output-div" id="output-div"></div>
+      <div class="output-div" id="follow-objects-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Highest of 2 Cards (Objects)</h2>
+      <div class="instructions-text">
+        <p>
+          Change the High Card program so that the player and computer each draw
+          2 cards instead of 1. The player with the highest of any of the cards
+          wins.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="highest-cards-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="highest-cards-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="highest-cards-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Follow Along (Creating Objects with Loops)</h2>
+      <div class="instructions-text">
+        <p>
+          Follow along the examples in the Creating Objects with Loops module,
+          and then try implementing a card deck generation function from
+          scratch. What might you do differently?
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="follow-creating-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="follow-creating-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="follow-creating-output-div"></div>
     </div>
     <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
     <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
@@ -36,18 +91,55 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <script src="script.js"></script>
     <!-- Define button click functionality -->
     <script>
-      // Declare and define a variable that represents the Submit Button
-      var button = document.querySelector("#submit-button");
+      // Declare and define variables that represents the Submit Button for each exercise
+      var followObjectsButton = document.querySelector(
+        "#follow-objects-submit-button"
+      );
+      var highestCardsButton = document.querySelector(
+        "#highest-cards-submit-button"
+      );
+      var followCreatingButton = document.querySelector(
+        "#follow-creating-submit-button"
+      );
+
       // When the submit button is clicked, access the text entered by the user in the input field
       // And pass it as an input parameter to the main function as defined in script.js
-      button.addEventListener("click", function () {
+      followObjectsButton.addEventListener("click", function () {
         // Set result to input value
-        var input = document.querySelector("#input-field");
-        // Store the output of main() in a new variable
-        var result = main(input.value);
+        var input = document.querySelector("#follow-objects-input-field");
+        // Store the output of the main function in a new variable
+        var result = followObjectsMain(input.value);
 
         // Display result in output element
-        var output = document.querySelector("#output-div");
+        var output = document.querySelector("#follow-objects-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      highestCardsButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#highest-cards-input-field");
+        // Store the output of the main function in a new variable
+        var result = highestCardsMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#highest-cards-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      followCreatingButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#follow-creating-input-field");
+        // Store the output of the main function in a new variable
+        var result = followCreatingMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#follow-creating-output-div");
         output.innerHTML = result;
 
         // Reset input value
