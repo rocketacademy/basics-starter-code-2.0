@@ -19,16 +19,44 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <h1 id="header">🚀 Basics Day 5: Pre-Class Exercises 🚀</h1>
     <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
     <div class="container">
+      <h2>Follow Along (Arrays)</h2>
+      <div class="instructions-text">
+        <p>Follow along and implement the code in the Arrays module.</p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
       <!-- The <p> tag defines a paragraph element. -->
       <p>Input:</p>
       <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
-      <input id="input-field" />
+      <input id="follow-arrays-input-field" />
       <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
       <br />
       <!-- The <button> tag represents.. you guessed it! a button. -->
-      <button id="submit-button">Submit</button>
+      <button id="follow-arrays-submit-button">Submit</button>
       <p>Output:</p>
-      <div class="output-div" id="output-div"></div>
+      <div class="output-div" id="follow-arrays-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Follow Along (Looping Over An Array)</h2>
+      <div class="instructions-text">
+        <p>
+          Follow along and implement the code in the Looping Over An Array
+          module.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="follow-arrays-loops-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="follow-arrays-loops-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="follow-arrays-loops-output-div"></div>
     </div>
     <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
     <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
@@ -36,18 +64,38 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <script src="script.js"></script>
     <!-- Define button click functionality -->
     <script>
-      // Declare and define a variable that represents the Submit Button
-      var button = document.querySelector("#submit-button");
+      // Declare and define variables that represents the Submit Button for each exercise
+      var followArraysButton = document.querySelector(
+        "#follow-arrays-submit-button"
+      );
+      var followArraysLoopsButton = document.querySelector(
+        "#follow-arrays-loops-submit-button"
+      );
+
       // When the submit button is clicked, access the text entered by the user in the input field
       // And pass it as an input parameter to the main function as defined in script.js
-      button.addEventListener("click", function () {
+      followArraysButton.addEventListener("click", function () {
         // Set result to input value
-        var input = document.querySelector("#input-field");
-        // Store the output of main() in a new variable
-        var result = main(input.value);
+        var input = document.querySelector("#follow-arrays-input-field");
+        // Store the output of the main function in a new variable
+        var result = followArraysMain(input.value);
 
         // Display result in output element
-        var output = document.querySelector("#output-div");
+        var output = document.querySelector("#follow-arrays-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      followArraysLoopsButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#follow-arrays-loops-input-field");
+        // Store the output of the main function in a new variable
+        var result = followArraysLoopsMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#follow-arrays-loops-output-div");
         output.innerHTML = result;
 
         // Reset input value
