@@ -19,16 +19,150 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <h1 id="header">🚀 Basics Day 4: Pre-Class Exercises 🚀</h1>
     <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
     <div class="container">
+      <h2>Follow Along (Loops)</h2>
+      <div class="instructions-text">
+        <p>Follow along and implement the code in the Loops module.</p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
       <!-- The <p> tag defines a paragraph element. -->
       <p>Input:</p>
       <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
-      <input id="input-field" />
+      <input id="follow-along-input-field" />
       <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
       <br />
       <!-- The <button> tag represents.. you guessed it! a button. -->
-      <button id="submit-button">Submit</button>
+      <button id="follow-along-submit-button">Submit</button>
       <p>Output:</p>
-      <div class="output-div" id="output-div"></div>
+      <div class="output-div" id="follow-along-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Simple Loop with Variations (Loops)</h2>
+      <div class="instructions-text">
+        <!-- The <ol> tag represents an ordered list, where items in the list can be ordered numerically. -->
+        <ol>
+          <!-- The <li> tag represents a list item, which has to be contained in an ordered list (<ol>) or an unordered list (<ul>). -->
+          <li>
+            Create a loop in the <code>simpleLoopMain</code> function. Make the
+            loop run 6 times, adding "hello" to myOutputValue with each loop
+            iteration.
+          </li>
+          <li>
+            What happens if <code>counter</code> starts as a number other than
+            zero?
+          </li>
+          <li>
+            What happens if, inside the loop, you alter the
+            <code>counter</code> by adding a number other than one?
+          </li>
+          <li>
+            What happens if you change the condition inside the loop from
+            <code>counter &lt; 6</code> to <code>counter &lt;= 6</code>?
+          </li>
+        </ol>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="simple-loop-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="simple-loop-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="simple-loop-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Loop within Loop (Loops)</h2>
+      <div class="instructions-text">
+        <!-- The <ol> tag represents an ordered list, where items in the list can be ordered numerically. -->
+        <ol>
+          <!-- The <li> tag represents a list item, which has to be contained in an ordered list (<ol>) or an unordered list (<ul>). -->
+          <li>
+            Create nested loops in the <code>loopWithinLoop</code> function,
+            where the outer loop runs 3 times and the inner loop runs 3 times
+            per outer loop. Concatenate <code>"hello"</code> to myOutputValue in
+            the inner loop. How many times do we see <code>"hello"</code>?
+          </li>
+          <li>
+            Add "<code>&lt;br /&gt;</code>" to <code>myOutputValue</code> in the
+            outer loop so that the program makes a new line for each outer loop.
+          </li>
+          <li>
+            What happens if <code>outerCounter</code> starts as a number other
+            than zero?
+          </li>
+          <li>
+            What happens if <code>innerCounter</code> starts as a number other
+            than zero?
+          </li>
+          <li>
+            What happens if, inside the loop, you alter
+            <code>outerCounter</code> by adding a number other than one?
+          </li>
+          <li>
+            What happens if, inside the loop, you alter
+            <code>innerCounter</code> by adding a number other than one?
+          </li>
+          <li>
+            What happens if you change the outer loop condition from
+            <code>outerCounter &lt; 3</code> to
+            <code>outerCounter &lt;= 3</code>?
+          </li>
+          <li>
+            What happens if you change the outer loop condition from
+            <code>innerCounter &lt; 3</code> to
+            <code>innerCounter &lt;= 3</code>?
+          </li>
+          <li>
+            Update loop conditions to use <code>input</code> to control how many
+            times the loops run.
+          </li>
+          <li>
+            Update our code such that the inner loop runs twice the number of
+            times as the outer loop. How many more times do we see
+            <code>"hello"</code>?
+          </li>
+        </ol>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="loop-within-loop-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="loop-within-loop-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="loop-within-loop-output-div"></div>
+    </div>
+    <!-- The <div> tag defines a division or a section in an HTML document, and is commonly use as a "container" for nested HTML elements. -->
+    <div class="container">
+      <h2>Infinite Loop (Loops)</h2>
+      <div class="instructions-text">
+        <p>
+          Make a loop that never stops running. Be prepared to stop/kill this
+          Chrome tab, because it will freeze.
+        </p>
+      </div>
+      <!-- The <hr> tag represents a horizontal rule. It is used if you want to add line dividers across your page. -->
+      <hr />
+      <!-- The <p> tag defines a paragraph element. -->
+      <p>Input:</p>
+      <!-- The self-closing <input /> tag represents a field for a user to enter input. -->
+      <input id="infinite-loop-input-field" />
+      <!-- The self-closing <br /> tag represents a line break - a line's worth of spacing before dispalying the next element. -->
+      <br />
+      <!-- The <button> tag represents.. you guessed it! a button. -->
+      <button id="infinite-loop-submit-button">Submit</button>
+      <p>Output:</p>
+      <div class="output-div" id="infinite-loop-output-div"></div>
     </div>
     <!-- Everything below this is incorporating JavaScript programming logic into the webpage. -->
     <!-- The script tag encloses JavaScript syntax for the browser to interpret programtically -->
@@ -36,18 +170,72 @@ The <html> element is known as the root element of a HTML page. All other elemen
     <script src="script.js"></script>
     <!-- Define button click functionality -->
     <script>
-      // Declare and define a variable that represents the Submit Button
-      var button = document.querySelector("#submit-button");
+      // Declare and define variables that represents the Submit Button for each exercise
+      var followAlongButton = document.querySelector(
+        "#follow-along-submit-button"
+      );
+      var simpleLoopButton = document.querySelector(
+        "#simple-loop-submit-button"
+      );
+      var loopWithinLoopButton = document.querySelector(
+        "#loop-within-loop-submit-button"
+      );
+      var infiniteLoopButton = document.querySelector(
+        "#infinite-loop-submit-button"
+      );
+
       // When the submit button is clicked, access the text entered by the user in the input field
       // And pass it as an input parameter to the main function as defined in script.js
-      button.addEventListener("click", function () {
+      followAlongButton.addEventListener("click", function () {
         // Set result to input value
-        var input = document.querySelector("#input-field");
-        // Store the output of main() in a new variable
-        var result = main(input.value);
+        var input = document.querySelector("#follow-along-input-field");
+        // Store the output of the main function in a new variable
+        var result = followAlongMain(input.value);
 
         // Display result in output element
-        var output = document.querySelector("#output-div");
+        var output = document.querySelector("#follow-along-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      simpleLoopButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#simple-loop-input-field");
+        // Store the output of the main function in a new variable
+        var result = simpleLoopMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#simple-loop-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      loopWithinLoopButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#loop-within-loop-input-field");
+        // Store the output of the main function in a new variable
+        var result = loopWithinLoopMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#loop-within-loop-output-div");
+        output.innerHTML = result;
+
+        // Reset input value
+        input.value = "";
+      });
+
+      infiniteLoopButton.addEventListener("click", function () {
+        // Set result to input value
+        var input = document.querySelector("#infinite-loop-input-field");
+        // Store the output of the main function in a new variable
+        var result = infiniteLoopMain(input.value);
+
+        // Display result in output element
+        var output = document.querySelector("#infinite-loop-output-div");
         output.innerHTML = result;
 
         // Reset input value
