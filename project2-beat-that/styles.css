@@ -49,7 +49,38 @@ button {
   width: 100%;
 }
 
-.divider {
+hr {
   margin-top: 2em;
   margin-bottom: 2em;
+}
+
+.instructions-text {
+  font-size: 0.85em;
+  font-style: italic;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ice-double {
+  display: flex;
+}
+
+.ice-double a {
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: rgba(71, 71, 71, 1);
+  display: block;
+  flex-basis: 47.5%;
+  margin: 0 1.25%;
+  padding: 2em;
+  border: 2px solid rgba(71, 71, 71, 1);
+  border-radius: 8px;
+}
+
+.ice-double a:hover {
+  color: rgba(71, 71, 71, 0.75);
+  border: 2px solid rgba(71, 71, 71, 0.75);
 }
