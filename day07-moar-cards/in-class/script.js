@@ -53,7 +53,49 @@ var moarCardsLowCard2PMain = function (input) {
 };
 
 var moarCardsLowCard2PairsMain = function (input) {
-  // Complete the More Comfortable: Moar Cards Low Card 2-Player Mode with Pairs exercise below with moarCardsLowCard2PMain as the main function.
+  // Complete the More Comfortable: Moar Cards Low Card 2-Player Mode with Pairs exercise below with moarCardsLowCard2PairsMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotSingleMain = function (input) {
+  // Complete the Base: Chat Bot Single Chat Bot Answer Set below with chatBotSingleMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotMultipleMain = function (input) {
+  // Complete the Base: Chat Bot Multiple Chat Bot Answer Sets below with chatBotMultipleMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotUsernameMain = function (input) {
+  // Complete the Base: Chat Bot Stores User's Name below with chatBotUsernameMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotAgeMain = function (input) {
+  // Complete the Base: Chat Bot Stores User's Age below with chatBotAgeMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotNamedMain = function (input) {
+  // Complete the More Comfortable: Chat Bot Named Answer Sets below with chatBotNamedMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotDynamicMain = function (input) {
+  // Complete the More Comfortable: Dynamic Chat Bot below with chatBotDynamicMain as the main function.
+  var myOutputValue = 'hello world';
+  return myOutputValue;
+};
+
+var chatBotFortuneMain = function (input) {
+  // Complete the More Comfortable: Chat Bot Fortune Telling below with chatBotFortuneMain as the main function.
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
