@@ -6,9 +6,8 @@ var emojiNumberCharactersMain = function (input) {
   // Complete the Base: Emoji Drawing Number of Characters exercise below with emojiNumberCharactersMain as the main function.
   var myOutputValue = '';
   var counter = 0;
-  while (counter < Number(input)) {
+  for (var counter = 0; counter < Number(input); counter += 1) {
     myOutputValue += '👍';
-    counter += 1;
   }
   return myOutputValue;
 };
@@ -22,17 +21,13 @@ var emojiSquareMain = function (input) {
   var myOutputValue = '';
   // sideLength represents the length of each side of the square
   var sideLength = Number(input);
-  var outerCounter = 0;
-  while (outerCounter < sideLength) {
-    var innerCounter = 0;
-    while (innerCounter < sideLength) {
+  for (var outerCounter = 0; outerCounter < sideLength; outerCounter += 1) {
+    for (var innerCounter = 0; innerCounter < sideLength; innerCounter += 1) {
       // Add a 👍 to the current row
       myOutputValue += '👍';
-      innerCounter += 1;
     }
     // Insert a line break to start a new row
     myOutputValue += '<br>';
-    outerCounter += 1;
   }
   return myOutputValue;
 };
@@ -46,21 +41,17 @@ var emojiTriangleMain = function (input) {
   var myOutputValue = '';
   // sideLength represents the length of each side of the square
   var sideLength = Number(input);
-  var outerCounter = 0;
-  while (outerCounter < sideLength) {
-    var innerCounter = 0;
+  for (var outerCounter = 0; outerCounter < sideLength; outerCounter += 1) {
     // Change the inner loop to only run outerCounter number of times
     // This means that we only have as many 👍 on each line as the current row index.
     // To ensure we always print the last emoji on each row, change the inner loop
     // conditional to use <= instead of <.
-    while (innerCounter <= outerCounter) {
+    for (var innerCounter = 0; innerCounter <= outerCounter; innerCounter += 1) {
       // Add a 👍 to the current row
       myOutputValue += '👍';
-      innerCounter += 1;
     }
     // Insert a line break to start a new row
     myOutputValue += '<br>';
-    outerCounter += 1;
   }
   return myOutputValue;
 };
@@ -74,10 +65,8 @@ var emojiOutlineSquareMain = function (input) {
   var myOutputValue = '';
   // sideLength represents the length of each side of the square
   var sideLength = Number(input);
-  var outerCounter = 0;
-  while (outerCounter < sideLength) {
-    var innerCounter = 0;
-    while (innerCounter < sideLength) {
+  for (var outerCounter = 0; outerCounter < sideLength; outerCounter += 1) {
+    for (var innerCounter = 0; innerCounter < sideLength; innerCounter += 1) {
       // If current iteration represents a border element, draw ✊ instead.
       if (outerCounter == 0 || outerCounter == sideLength - 1
         || innerCounter == 0 || innerCounter == sideLength - 1) {
@@ -86,12 +75,9 @@ var emojiOutlineSquareMain = function (input) {
         // Add a 👍 to the current row
         myOutputValue += '👍';
       }
-
-      innerCounter += 1;
     }
     // Insert a line break to start a new row
     myOutputValue += '<br>';
-    outerCounter += 1;
   }
   return myOutputValue;
 };
@@ -110,10 +96,8 @@ var emojiCenterSquareMain = function (input) {
   if (sideLength % 2 != 1) {
     return 'Please enter an odd number for side length';
   }
-  var outerCounter = 0;
-  while (outerCounter < sideLength) {
-    var innerCounter = 0;
-    while (innerCounter < sideLength) {
+  for (var outerCounter = 0; outerCounter < sideLength; outerCounter += 1) {
+    for (var innerCounter = 0; innerCounter < sideLength; innerCounter += 1) {
       var halfSideLengthIndex = Math.floor(sideLength / 2);
       // If current iteration represents a border element, draw ✊ instead.
       if (outerCounter == 0 || outerCounter == sideLength - 1
@@ -126,11 +110,9 @@ var emojiCenterSquareMain = function (input) {
       } else {
         myOutputValue += '👍';
       }
-      innerCounter += 1;
     }
     // Insert a line break to start a new row
     myOutputValue += '<br>';
-    outerCounter += 1;
   }
   return myOutputValue;
 };
@@ -178,8 +160,7 @@ var multiDiceBaseMain = function (input) {
   // Increment number of games the user has played for win loss record
   numRoundsPlayed += 1;
   // Roll numDice number of dice
-  var counter = 0;
-  while (counter < numDice) {
+  for (var counter = 0; counter < numDice; counter += 1) {
     var diceRoll = rollDice();
     // Store the current dice roll in diceRolls to show the user later
     diceRolls.push(diceRoll);
@@ -187,7 +168,6 @@ var multiDiceBaseMain = function (input) {
     if (diceRoll == userGuess) {
       hasUserWon = true;
     }
-    counter += 1;
   }
 
   // Increment win counter if user has won
@@ -233,8 +213,7 @@ var multiDiceMultiRoundMain = function (input) {
 
   // Play numRounds rounds with a fixed number of dice and a fixed user guess
   var roundCounter = 0;
-  var numRounds = 4;
-  while (roundCounter < numRounds) {
+  for (var numRounds = 4; roundCounter < numRounds; roundCounter += 1) {
     // Initialise diceRolls array to store dice rolls for this round
     diceRolls = [];
     // Initialise hasUserWon to false for this round
@@ -243,8 +222,7 @@ var multiDiceMultiRoundMain = function (input) {
     numRoundsPlayed += 1;
 
     // Roll numDice number of dice
-    var diceCounter = 0;
-    while (diceCounter < numDice) {
+    for (var diceCounter = 0; diceCounter < numDice; diceCounter += 1) {
       var diceRoll = rollDice();
       // Store the current dice roll in diceRolls to show the user later
       diceRolls.push(diceRoll);
@@ -252,7 +230,6 @@ var multiDiceMultiRoundMain = function (input) {
       if (diceRoll == userGuess) {
         hasUserWon = true;
       }
-      diceCounter += 1;
     }
 
     // Push the populated dice rolls array into the dice rolls for each round array
@@ -261,7 +238,6 @@ var multiDiceMultiRoundMain = function (input) {
     if (hasUserWon) {
       numWins += 1;
     }
-    roundCounter += 1;
   }
 
   // After numRounds, reset mode to enter num dice so user can play again.
@@ -319,9 +295,8 @@ var multiDiceTwoPlayerMain = function (input) {
   var diceRollsForEachRound = [];
 
   // Play numRounds rounds with a fixed number of dice and a fixed user guess
-  var roundCounter = 0;
   var numRounds = 4;
-  while (roundCounter < numRounds) {
+  for (var roundCounter = 0; roundCounter < numRounds;  roundCounter += 1) {
     // Initialise diceRolls array to store dice rolls for this round
     diceRolls = [];
     // Initialise hasUserWon to false for this round
@@ -330,8 +305,7 @@ var multiDiceTwoPlayerMain = function (input) {
     incrementNumRoundsPlayed();
 
     // Roll numDice number of dice
-    var diceCounter = 0;
-    while (diceCounter < numDice) {
+    for (var diceCounter = 0; diceCounter < numDice; diceCounter += 1) {
       var diceRoll = rollDice();
       // Store the current dice roll in diceRolls to show the user later
       diceRolls.push(diceRoll);
@@ -339,7 +313,6 @@ var multiDiceTwoPlayerMain = function (input) {
       if (diceRoll == userGuess) {
         hasUserWon = true;
       }
-      diceCounter += 1;
     }
 
     // Push the populated dice rolls array into the dice rolls for each round array
@@ -348,7 +321,6 @@ var multiDiceTwoPlayerMain = function (input) {
     if (hasUserWon) {
       incrementNumWins();
     }
-    roundCounter += 1;
   }
 
   // After numRounds, reset mode to enter num dice so user can play again.
@@ -402,16 +374,13 @@ var incrementNumWinsOfCurrPlayer = function () {
 // Output current player's result and all players' win-loss records.
 var generateOutputMessage = function (userGuess, diceRollsForCurrRound, nextPlayer) {
   var playerWinLossRecordsOutput = '';
-  var playerCounter = 0;
-  while (playerCounter < numPlayers) {
+  for (var playerCounter = 0; playerCounter < numPlayers; playerCounter += 1) {
     // Create a string with all players' win loss record
     var playerNum = playerCounter + 1;
     var playerNumWins = numWinsOfEachPlayer[playerCounter];
     var playerNumLosses = numRoundsPlayedByEachPlayer[playerCounter] - playerNumWins;
     // Add the current player's win-loss record to the output string
     playerWinLossRecordsOutput += `Player ${playerNum} win-loss record is ${playerNumWins}-${playerNumLosses}. <br/><br/>`;
-    // Move on to next player
-    playerCounter += 1;
   }
   // .join converts an array to a string where each element is separated by the param to .join.
   return `
@@ -456,9 +425,8 @@ var multiDiceMultiPlayerMain = function (input) {
   var diceRollsForEachRound = [];
 
   // Play numRounds rounds with a fixed number of dice and a fixed user guess
-  var roundCounter = 0;
   var numRounds = 4;
-  while (roundCounter < numRounds) {
+  for (var roundCounter = 0; roundCounter < numRounds; roundCounter += 1) {
     // Initialise diceRolls array to store dice rolls for this round
     diceRolls = [];
     // Initialise hasUserWon to false for this round
@@ -467,8 +435,7 @@ var multiDiceMultiPlayerMain = function (input) {
     incrementNumRoundsPlayedByCurrPlayer();
 
     // Roll numDice number of dice
-    var diceCounter = 0;
-    while (diceCounter < numDice) {
+    for (var diceCounter = 0; diceCounter < numDice; diceCounter += 1) {
       var diceRoll = rollDice();
       // Store the current dice roll in diceRolls to show the user later
       diceRolls.push(diceRoll);
@@ -476,7 +443,6 @@ var multiDiceMultiPlayerMain = function (input) {
       if (diceRoll == userGuess) {
         hasUserWon = true;
       }
-      diceCounter += 1;
     }
 
     // Push the populated dice rolls array into the dice rolls for each round array
@@ -485,7 +451,6 @@ var multiDiceMultiPlayerMain = function (input) {
     if (hasUserWon) {
       incrementNumWinsOfCurrPlayer();
     }
-    roundCounter += 1;
   }
 
   // After numRounds, reset mode to enter num dice for next player's turn
