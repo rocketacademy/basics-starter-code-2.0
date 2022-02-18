@@ -8,16 +8,14 @@ var makeDeck = function () {
   var suits = ['hearts', 'diamonds', 'clubs', 'spades'];
 
   // Loop over the suits array
-  var suitIndex = 0;
-  while (suitIndex < suits.length) {
+  for (var suitIndex = 0; suitIndex < suits.length; suitIndex += 1) {
     // Store the current suit in a variable
     var currentSuit = suits[suitIndex];
 
     // Loop from 1 to 13 to create all cards for a given suit
     // Notice rankCounter starts at 1 and not 0, and ends at 13 and not 12.
     // This is an example of a loop without an array.
-    var rankCounter = 1;
-    while (rankCounter <= 13) {
+    for (var rankCounter = 1; rankCounter <= 13; rankCounter += 1) {
       // By default, the card name is the same as rankCounter
       var cardName = rankCounter;
 
@@ -40,14 +38,8 @@ var makeDeck = function () {
       };
 
       // Add the new card to the deck
-      cardDeck.push(card);
-
-      // Increment rankCounter to iterate over the next rank
-      rankCounter += 1;
-    }
-
-    // Increment the suit index to iterate over the next suit
-    suitIndex += 1;
+      cardDeck.push(card); 
+    }   
   }
 
   // Return the completed card deck
@@ -62,8 +54,7 @@ var getRandomIndex = function (max) {
 // Shuffle the elements in the cardDeck array
 var shuffleCards = function (cardDeck) {
   // Loop over the card deck array once
-  var currentIndex = 0;
-  while (currentIndex < cardDeck.length) {
+  for (var currentIndex = 0; currentIndex < cardDeck.length; currentIndex = currentIndex + 1) {
     // Select a random index in the deck
     var randomIndex = getRandomIndex(cardDeck.length);
     // Select the card that corresponds to randomIndex
@@ -72,9 +63,7 @@ var shuffleCards = function (cardDeck) {
     var currentCard = cardDeck[currentIndex];
     // Swap positions of randomCard and currentCard in the deck
     cardDeck[currentIndex] = randomCard;
-    cardDeck[randomIndex] = currentCard;
-    // Increment currentIndex
-    currentIndex = currentIndex + 1;
+    cardDeck[randomIndex] = currentCard;    
   }
   // Return the shuffled deck
   return cardDeck;
