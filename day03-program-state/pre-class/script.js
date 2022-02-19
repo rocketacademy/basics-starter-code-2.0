@@ -74,6 +74,7 @@ var winLossMain = function (input) {
   return myOutputValue;
 };
 
+// this answer is beyond the scope of what you know now but its a preview of what you can do with arrays and javascript Math functions
 var rollCounter = [0, 0, 0, 0, 0, 0];
 // rollCounter[0] collects count for diceRolls of 1
 // rollCounter[1] collects count for diceRolls of 2
