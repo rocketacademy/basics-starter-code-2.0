@@ -1,3 +1,7 @@
+/**
+ * Orange Juice Calculator (Functions II)
+ */
+
 var orangeJuiceMain = function (numGuest) {
   // Attempt the Orange Juice Calculator exercise from the Functions II module below with orangeJuiceMain as the main function.
   var orangesPerGlass = 4;
@@ -8,6 +12,13 @@ var orangeJuiceMain = function (numGuest) {
   return myOutputValue;
 };
 
+/**
+ * Orange Juice Calculator (Functions II)
+ * Function edited to accept 2 parameters
+ * Do not worry about our input field not accepting more than 1 parameter
+ * for now
+ */
+
 var orangeJuiceAdvanced = function (numGuest, glassesPerGuest) {
   // Attempt the Orange Juice Calculator exercise from the Functions II module below with orangeJuiceMain as the main function.
   var orangesPerGlass = 4;
@@ -16,6 +27,10 @@ var orangeJuiceAdvanced = function (numGuest, glassesPerGuest) {
   var myOutputValue = `${numOranges} oranges are needed`;
   return myOutputValue;
 };
+
+/**
+ * House Paint (Functions II)
+ */
 
 var paintMain = function (pricePerLitre) {
   // Attempt the House Paint exercise from the Functions II module below with paintMain as the main function.
@@ -33,6 +48,13 @@ var paintMain = function (pricePerLitre) {
   return myOutputValue;
 };
 
+/**
+ * House Paint (Functions II)
+ * Function edited to accept 3 parameters
+ * Do not worry about our input field not accepting more than 1 parameter
+ * for now
+ */
+
 var paintMainAdvanced = function (pricePerLitre, numRooms, numCoatsPerArea) {
   // Attempt the House Paint exercise from the Functions II module below with paintMain as the main function.
 
@@ -46,6 +68,10 @@ var paintMainAdvanced = function (pricePerLitre, numRooms, numCoatsPerArea) {
   var myOutputValue = `Paint cost: $${cost}`;
   return myOutputValue;
 };
+
+/**
+ * Random Dice Rolls (Intro to Logic and Control Flow)
+ */
 
 var rollDice = function () {
   // Generate a decimal from 0 through 6, inclusive of 0 and exclusive of 6.
@@ -74,6 +100,10 @@ var randomDiceMain = function (input) {
   return myOutputValue;
 };
 
+/**
+ * Secret Phrase (If, Else, Else If)
+ */
+
 var secretPhraseMain = function (input) {
   // Attempt the Secret Phrase exercise from the If, Else, Else If module below with secretPhraseMain as the main function.
   // Set a default value for myOutputValue
@@ -91,6 +121,10 @@ var secretPhraseMain = function (input) {
   return myOutputValue;
 };
 
+/**
+ * Dice Game (If, Else, Else If)
+ */
+
 var diceGameMain = function (input) {
   // Attempt the Dice Game exercise from the If, Else, Else If module below with diceGameMain as the main function.
   // Generate a random dice number
@@ -107,6 +141,10 @@ var diceGameMain = function (input) {
   // Return output.
   return myOutputValue;
 };
+
+/**
+ * Twice the Guess (If, Else, Else If)
+ */
 
 var twiceGuessMain = function (guess) {
   // Attempt the Twice the Guess exercise from the If, Else, Else If module below with twiceGuessMain as the main function.
