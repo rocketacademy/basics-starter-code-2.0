@@ -103,7 +103,7 @@ var winLossMain = function (input) {
  */
 
 // Initialising all of these may seem tedious now,
-// but we will learning JavaScript objects and arrays
+// but we will be learning JavaScript objects and arrays
 // later in the course which will make count tracking
 // across various values and keys simpler.
 var roll1Count = 0;
@@ -120,9 +120,9 @@ var roll6Count = 0;
 // var rollCounter = [0, 0, 0, 0, 0, 0];
 
 // Solution using JavaScript objects:
-// To access the value of roll1, you can use diceCounters["1"]. 
-// To increment the value of roll1, you can do
-// so similarly: diceCounters["1"] += 1
+// To access the count of dice roll 1, you can use diceCounters["1"]. 
+// To increment the count of dice roll 1, you can do so similarly:
+// diceCounters["1"] += 1
 // var diceCounters = {
 //   "1": 0,
 //   "2": 0,
@@ -190,9 +190,10 @@ var mostRolledMain = function (input) {
   // you can get the index of the maxNumOfRolls, and increment the index
   // by 1 (array indices count from 0) to get the dice number rolled the
   // most times. Using JavaScript objects, you can convert all values
-  // to an array using the Object.values() method. Then similar to the
-  // array method, get the index of the maxNumOfRolls, increment the index
-  // by 1 to get the dice number rolled the most times.
+  // (number of times rolled per dice roll) to an array using the 
+  // Object.values() method. Then similar to the array approach, get 
+  // the index of the maxNumOfRolls (result of Object.values()), 
+  // increment the index by 1 to get the dice number rolled the most times.
   if (maxNumOfRolls === roll1Count) {
     rolledMost = 1;
   } else if (maxNumOfRolls === roll2Count) {
