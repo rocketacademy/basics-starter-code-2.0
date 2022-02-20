@@ -1,7 +1,15 @@
+/**
+ * Default Template (Our First Program)
+ */
+
 var main = function (input) {
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
+
+/**
+ * Greeting Program (Our First Program)
+ */
 
 var greetingMain = function (input) {
   // Attempt the Greeting Program exercise from the Our First Program module below with greetingMain as the main function.
@@ -9,26 +17,44 @@ var greetingMain = function (input) {
   return myOutputValue;
 };
 
+/**
+ * Metric Conversion Program (Our First Program)
+ */
+
 var metricMain = function (input) {
   // Attempt the Metric Conversion Program exercise from the Our First Program module below with metricMain as the main function.
   var distanceInMiles = input * 0.62;
 
   var myOutputValue =
-    'Hi! ' + input + ' is equal to ' + distanceInMiles + ' miles.';
-  return myOutputValue;
-};
-
-var functionsExampleMain = function (input) {
-  // Attempt the Base: Run Example Code exercise from the Functions I module below with functionsExampleMain as the main function.
-  var myOutputValue = convertMinsToHrs();
-  // var myOutputValue = calcTrainTwoSpeed(input);
-  // var myOutputValue = trainSpeedMain(input);
-  // var myOutputValue = clockMain(input);
+    'Hi! ' + input + 'km is equal to ' + distanceInMiles + ' miles.';
   return myOutputValue;
 };
 
 /**
- * Comfortable: Train Speed
+ * Base: Run Example Code (Functions I)
+ */
+
+var convertKmToMiles = function (distanceInKm) {
+  var distanceInMiles = distanceInKm * 0.62;
+  return distanceInKm + "km is " + distanceInMiles + " mile(s)";
+};
+
+var convertMinutesToHours = function (minutes) {
+  var hours = minutes / 60;
+  return minutes + " minute(s) is " + hours + " hour(s)";
+};
+
+var functionsExampleMain = function (input) {
+  // Attempt the Base: Run Example Code exercise from the Functions I module below with functionsExampleMain as the main function.
+
+  // Comment out the functions you are not using
+  // var myOutputValue = convertMinutesToHours(input);
+  var myOutputValue = convertKmToMiles(input)
+  return myOutputValue;
+};
+
+/**
+ * Comfortable: Train Speed (Functions I)
  */
 
 /*
@@ -65,6 +91,11 @@ var trainSpeedMain = function (input) {
   var myOutputValue = `Given a ${input}min delay, train 2 needs to travel at a speed of ${trainTwoNewSpeed} km/h in order to arrive at the same time as train 1`;
   return myOutputValue;
 };
+
+/**
+ * Comfortable: More Comfortable: Clock (Functions I)
+
+ */
 
 var clockMain = function (input) {
   // Attempt the More Comfortable: Clock exercise from the Functions I module below with clockMain as the main function.
