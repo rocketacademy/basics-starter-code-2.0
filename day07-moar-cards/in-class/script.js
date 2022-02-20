@@ -690,15 +690,471 @@ var moarCardsLowCardBetsMain = function (input) {
   return `${genericOutput} <br/><br/> Unexpected outcome. ${generateWagerPointsMessage()}`;
 };
 
+/**
+ * More Comfortable: Moar Cards Low Card 2-Player Mode
+ */
+
+// initialise game mode string constants
+var DRAW_INITIAL_CARDS_MODE = 'draw initial cards';
+var PICK_CARDS_MODE = 'pick cards'
+var CARD_SELECTED_MODE = 'card selected'
+var VIEW_WINNER_MODE = 'view winner';
+
+// other constants
+// global constant for valid inputs in card selection mode
+var VALID_CARD_NAME_INPUTS = ['ace', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king'];
+
+// set default mode
+var twoPlayerVersionMode = DRAW_INITIAL_CARDS_MODE;
+// using array indexes to keep track of player turn
+// player 1 is 0, player 2 is 1;
+var twoPlayerVersionCurrentPlayerIndex = 0;
+
+// set initial player hands (empty array)
+var twoPlayerVersionHands = [];
+// to store cards played each turn (best of 3)
+var twoPlayerVersionCardsPlayed = [];
+var twoPlayerVersionCurrentWinsCounter = [0, 0];
+
+// convenient function for resetting game
+var twoPlayerVersionResetGame = function () {
+  twoPlayerVersionHands = [];
+  twoPlayerVersionCardsPlayed = [];
+  twoPlayerVersionCurrentWinsCounter = [0, 0];
+  twoPlayerVersionMode = DRAW_INITIAL_CARDS_MODE;
+}
+
+// draw 3 cards for each hand, then compile them into an array
+var drawInitialHands = function () {
+  // draw 3 cards for player 1
+  var player1Hand = [shuffledCardDeck.pop(), shuffledCardDeck.pop(), shuffledCardDeck.pop()];
+  // draw 3 cards for player 2
+  var player2Hand = [shuffledCardDeck.pop(), shuffledCardDeck.pop(), shuffledCardDeck.pop()];
+  // compile both hands into 1 array: 2D array
+  // to retrieve a card from player 1's hand, it will be
+  // twoPlayerVersionHands[0][indexOfCard];
+  // to retrieve a card from player 2's hand, it will be
+  // twoPlayerVersionHands[1][indexOfCard];
+  twoPlayerVersionHands = [player1Hand, player2Hand];
+  // since player 1 is index 0, remember to increment the number
+  // to print it correctly, ie. `${twoPlayerVersionCurrentPlayerIndex + 1}`
+  var output = `The hands for Player 1 and Player 2 have been drawn. Player ${twoPlayerVersionCurrentPlayerIndex + 1} goes first. Click Submit to continue.`;
+  // switch modes
+  twoPlayerVersionMode = PICK_CARDS_MODE;
+  return output;
+}
+
+var pickCards = function () {
+  var output = `Player ${twoPlayerVersionCurrentPlayerIndex + 1}, your hand contains: `
+
+  // twoPlayerVersionHands is a 2D array, structured this way
+  // [ [ {name: ..., rank: ..., suit: ...}, etc. ], [ {name: ..., rank: ..., suit: ...}, etc.] ]
+  // inner arrays represents the hand for each player
+  var currentHand = twoPlayerVersionHands[twoPlayerVersionCurrentPlayerIndex];
+
+  for (var i = 0; i < currentHand.length; i += 1) {
+    var currentCard = `${currentHand[i].name} of ${currentHand[i].suit}`
+    output += `${currentCard}`
+
+    if (i !== currentHand.length - 1) {
+      // if it's not the last card in the array,
+      // separate it from the next card with commas
+      output += ', '
+    } else {
+      // if it's the last card in array, end the
+      // sentence with full-stop.
+      output += '. '
+    }
+  }
+
+  output += 'Type in the name of the card you wish to play (ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, or king).'
+
+  // switch modes
+  twoPlayerVersionMode = CARD_SELECTED_MODE;
+
+  return output;
+}
+
+var viewWinner = function () {
+  var output = `Player 1 has chosen a ${twoPlayerVersionCardsPlayed[0].name} of ${twoPlayerVersionCardsPlayed[0].suit}, while Player 2 has chosen a ${twoPlayerVersionCardsPlayed[1].name} of ${twoPlayerVersionCardsPlayed[1].suit}. `;
+
+  if (twoPlayerVersionCardsPlayed[0].rank < twoPlayerVersionCardsPlayed[1].rank) {
+    output += 'Player 1 wins! ';
+    twoPlayerVersionCurrentWinsCounter[0] += 1;
+  } else if (twoPlayerVersionCardsPlayed[0].rank > twoPlayerVersionCardsPlayed[1].rank) {
+    output += 'Player 2 wins! ';
+    twoPlayerVersionCurrentWinsCounter[1] += 1;
+  } else {
+    output += 'It\'s a tie! ';
+  }
+
+  output += `Player 1 has won ${twoPlayerVersionCurrentWinsCounter[0]} time(s), while Player 2 has won ${twoPlayerVersionCurrentWinsCounter[1]} time(s) in this Best of 3 game. `
+
+  // initialise condition for empty hands
+  // ie. inner arrays of twoPlayerVersionHands have
+  // lengths of 0
+  var bothHandsEmpty = (
+    twoPlayerVersionHands[0].length === 0 && 
+    twoPlayerVersionHands[1].length === 0
+  );
+
+  // player 1 win condition:
+  // (1) both hands empty AND player 1 wins more than player 2, or
+  // (2) player 1 has already won 2 in Best of 3
+  if (
+    (
+      bothHandsEmpty && 
+      twoPlayerVersionCurrentWinsCounter[0] > twoPlayerVersionCurrentWinsCounter[1]
+    ) || 
+    (
+      twoPlayerVersionCurrentWinsCounter[0] >= 2
+    )
+  ) {
+    output += 'Player 1 is the best player of 3 rounds! Click Submit to restart the game.';
+    twoPlayerVersionResetGame();
+  } 
+  // player 2 win condition:
+  // (1) both hands empty AND player 2 wins more than player 1, or
+  // (2) player 2 has already won 2 in Best of 3
+  else if (
+    (
+      bothHandsEmpty && 
+      twoPlayerVersionCurrentWinsCounter[1] > twoPlayerVersionCurrentWinsCounter[0]
+    ) || 
+    (
+      twoPlayerVersionCurrentWinsCounter[1] >= 2
+    )
+  ) {
+    output += 'Player 2 is the best player of 3 rounds! Click Submit to restart the game.';
+    twoPlayerVersionResetGame();
+  } 
+  // draw condition:
+  // both hands empty, above requirements not met
+  else if (bothHandsEmpty) {
+    output += 'Both of you have run out of cards, and there is no best player of 3 rounds! It\'s a tie! Click Submit to restart the game.';
+    twoPlayerVersionResetGame();
+  }
+  // hands not yet empty, continue Best of 3 
+  else {
+    output += 'Click Submit to continue this Best of 3 game.';
+    twoPlayerVersionCardsPlayed = [];
+    twoPlayerVersionMode = PICK_CARDS_MODE;
+  }
+
+  return output;
+}
+
+var cardSelection = function (input) {
+  var output = '';
+  // retrieve current hand of Player X
+  var currentHand = twoPlayerVersionHands[twoPlayerVersionCurrentPlayerIndex];
+  // initialise empty array just for storing
+  // names of available cards in Player X's hand
+  var currentPlayerCardNames = [];
+
+  // populate card names in currentPlayerCardNames
+  for (var i = 0; i < currentHand.length; i += 1) {
+    currentPlayerCardNames.push(
+      String(currentHand[i].name)
+    );
+  }
+
+  // if user's input does not match a valid card name
+  // Array.indexOf method allows you to find the index
+  // of a given item in array. If item is not found in array,
+  // returns -1. String.toLowerCase() converts
+  // a string (user's input) to full lower-case.
+  // Array.indexOf: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+  // String.toLowerCase: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+  if (VALID_CARD_NAME_INPUTS.indexOf(input.toLowerCase()) < 0) {
+    output = `Player ${twoPlayerVersionCurrentPlayerIndex + 1}, you entered "${input}". It's not a valid card name, please enter a valid card name: ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, or king.`
+  }
+  // if user's input does not match the name of a card in hand 
+  else if (currentPlayerCardNames.indexOf(input.toLowerCase()) < 0) {
+    output = `Player ${twoPlayerVersionCurrentPlayerIndex + 1}, you entered "${input}". Your hand contains: `
+
+    for (var i = 0; i < currentHand.length; i += 1) {
+      var currentCard = `${currentHand[i].name} of ${currentHand[i].suit}`
+      output += `${currentCard}`
+
+      // if not last card in hand, separate it from
+      // next card using commas
+      if (i !== currentHand.length - 1) {
+        output += ', '
+      }
+      // if last card in hand, end sentence
+      // with a full-stop.
+      else {
+        output += '. '
+      }
+    }
+
+    output += `Please enter the name of the card you have: ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, or king.`
+  }
+  // valid card name, and card name exists in player's hand 
+  else {
+    var cardIndex = currentPlayerCardNames.indexOf(input.toLowerCase());
+    var currentCard = `${currentHand[cardIndex].name} of ${currentHand[cardIndex].suit}`;
+
+    output = `Player ${twoPlayerVersionCurrentPlayerIndex + 1}, you have chosen to play your ${currentCard}. `
+
+    // add chosen card to twoPlayerVersionCardsPlayed
+    twoPlayerVersionCardsPlayed.push(currentHand[cardIndex]);
+
+    // remove chosen card from hand (array) using Array.splice
+    // first argument of Array.splice is the index of the item
+    // you are modifying. second argument of Array.splice is
+    // the number of items you are deleting STARTING FROM the
+    // index given in the first argument:
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+    twoPlayerVersionHands[twoPlayerVersionCurrentPlayerIndex].splice(cardIndex, 1)
+
+    // by default, we assume next player is player 1 (index 0)
+    var nextPlayerIndex = 0;
+
+    // if current player is already player 1
+    if (twoPlayerVersionCurrentPlayerIndex === 0) {
+      // set next player to player 2 (index 1)
+      nextPlayerIndex = 1;
+      // switch modes
+      twoPlayerVersionMode = PICK_CARDS_MODE;
+      output += `Click Submit to switch to Player ${nextPlayerIndex + 1}'s turn.`
+    } else {
+      // if current player is player 2 (index 1)
+      // both players have completed choosing their cards,
+      // thus we switch to view the winner of this round (Best of 3)
+      twoPlayerVersionMode = VIEW_WINNER_MODE;
+      output += `Click Submit to see the results of this round.`
+    }
+
+    twoPlayerVersionCurrentPlayerIndex = nextPlayerIndex;
+  }
+
+  return output;
+}
+
 var moarCardsLowCard2PMain = function (input) {
   // Complete the More Comfortable: Moar Cards Low Card 2-Player Mode exercise below with moarCardsLowCard2PMain as the main function.
-  var myOutputValue = 'hello world';
+  var myOutputValue = '';
+
+  if (twoPlayerVersionMode === DRAW_INITIAL_CARDS_MODE) {
+    myOutputValue = drawInitialHands();
+  } else if (twoPlayerVersionMode === PICK_CARDS_MODE) {
+    myOutputValue = pickCards();
+  } else if (twoPlayerVersionMode === CARD_SELECTED_MODE) {
+    myOutputValue = cardSelection(input);
+  } else if (twoPlayerVersionMode === VIEW_WINNER_MODE) {
+    myOutputValue = viewWinner();
+  }
   return myOutputValue;
 };
 
+/**
+ * More Comfortable: Moar Cards Low Card 2-Player Mode with Pairs
+ */
+
+var hasPairs = [false, false];
+
+// modified convenient function for resetting game
+var twoPlayerPairsResetGame = function () {
+  twoPlayerVersionHands = [];
+  twoPlayerVersionCardsPlayed = [];
+  twoPlayerVersionCurrentWinsCounter = [0, 0];
+  hasPairs = [false, false];
+  twoPlayerVersionMode = DRAW_INITIAL_CARDS_MODE;
+}
+
+var pickCardsPairs = function () {
+  var output = `Player ${twoPlayerVersionCurrentPlayerIndex + 1}, your hand contains: `
+
+  // twoPlayerVersionHands is a 2D array, structured this way
+  // [ [ {name: ..., rank: ..., suit: ...}, etc. ], [ {name: ..., rank: ..., suit: ...}, etc.] ]
+  // inner arrays represents the hand for each player
+  var currentHand = twoPlayerVersionHands[twoPlayerVersionCurrentPlayerIndex];
+  // new array to keep track of ranks of existing hand
+  var currentHandRanks = [];
+
+  for (var i = 0; i < currentHand.length; i += 1) {
+    var currentCard = `${currentHand[i].name} of ${currentHand[i].suit}`
+    output += `${currentCard}`
+    // add ranks to currentHandRanks
+    currentHandRanks.push(currentHand[i].rank)
+
+    if (i !== currentHand.length - 1) {
+      // if it's not the last card in the array,
+      // separate it from the next card with commas
+      output += ', '
+    } else {
+      // if it's the last card in array, end the
+      // sentence with full-stop.
+      output += '. '
+    }
+
+    // we check for pairs in currentHandRanks by:
+    // (a) ensuring that we have more than 1 item in currentHandRanks, and
+    // (b) the first occurence and last occurence indices are different
+    // (ie. they exist in the array in different positions)
+    // Array.lastIndexOf: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/lastIndexOf
+    if (
+      currentHandRanks.length > 1 && 
+      currentHandRanks.indexOf(currentHand[i].rank) !==
+      currentHandRanks.lastIndexOf(currentHand[i].rank)
+    ) {
+      hasPairs[twoPlayerVersionCurrentPlayerIndex] = true;
+    }
+  }
+
+  // condition is the same as `if (hasPairs[twoPlayerVersionCurrentPlayerIndex] === true)`
+  if (hasPairs[twoPlayerVersionCurrentPlayerIndex]) {
+    output += 'You have a pair! '
+
+    if (twoPlayerVersionCurrentPlayerIndex === 0) {
+      output += 'Click Submit to move on to the next player.'
+      // switch modes
+      twoPlayerVersionMode = PICK_CARDS_MODE;
+      // switch players
+      twoPlayerVersionCurrentPlayerIndex = 1;
+    } else {
+      output += 'Click Submit to view the results of this round.'
+      // switch modes
+      twoPlayerVersionMode = VIEW_WINNER_MODE;
+      // switch players
+      twoPlayerVersionCurrentPlayerIndex = 0;
+    }
+  } else {
+    output += 'Type in the name of the card you wish to play (ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, jack, queen, or king).'
+
+    // switch modes
+    twoPlayerVersionMode = CARD_SELECTED_MODE;
+  }
+
+  return output;
+}
+
+var viewWinnerPairs = function () {
+  // begin with empty output string
+  var output = '';
+
+  // no pairs at all, show chosen cards for both players
+  if (!hasPairs[0] && !hasPairs[1]) {
+    output = `Player 1 has chosen a ${twoPlayerVersionCardsPlayed[0].name} of ${twoPlayerVersionCardsPlayed[0].suit}, while Player 2 has chosen a ${twoPlayerVersionCardsPlayed[1].name} of ${twoPlayerVersionCardsPlayed[1].suit}. `;
+
+    if (twoPlayerVersionCardsPlayed[0].rank < twoPlayerVersionCardsPlayed[1].rank) {
+      output += 'Player 1 wins! ';
+      twoPlayerVersionCurrentWinsCounter[0] += 1;
+    } else if (twoPlayerVersionCardsPlayed[0].rank > twoPlayerVersionCardsPlayed[1].rank) {
+      output += 'Player 2 wins! ';
+      twoPlayerVersionCurrentWinsCounter[1] += 1;
+    } else {
+      output += 'It\'s a tie! ';
+    }
+
+    output += `Player 1 has won ${twoPlayerVersionCurrentWinsCounter[0]} time(s), while Player 2 has won ${twoPlayerVersionCurrentWinsCounter[1]} time(s) in this Best of 3 game. `
+  }
+
+  // initialise condition for empty hands
+  // ie. inner arrays of twoPlayerVersionHands have
+  // lengths of 0
+  var bothHandsEmpty = (
+    twoPlayerVersionHands[0].length === 0 && 
+    twoPlayerVersionHands[1].length === 0
+  );
+
+  // player 1 win condition:
+  // (1) both hands empty AND player 1 wins more than player 2, or
+  // (2) player 1 has already won 2 in Best of 3, or
+  // (3) new: player 1 has pairs, player 2 doesn't
+  if (
+    (
+      bothHandsEmpty && 
+      twoPlayerVersionCurrentWinsCounter[0] > twoPlayerVersionCurrentWinsCounter[1]
+    ) || 
+    (
+      twoPlayerVersionCurrentWinsCounter[0] >= 2
+    ) || 
+    (
+      hasPairs[0] && !hasPairs[1]
+    )
+  ) {
+    if (hasPairs[0]) {
+      output += 'Player 1 has drawn a pair, and Player 2 hasn\'t! Player 1 is the automatic winner of all 3 rounds! '
+    } else {
+      output += 'Player 1 is the best player of 3 rounds! '
+    }
+
+    output += 'Click Submit to restart the game.';
+    twoPlayerPairsResetGame();
+  } 
+  // player 2 win condition:
+  // (1) both hands empty AND player 2 wins more than player 1, or
+  // (2) player 2 has already won 2 in Best of 3, or
+  // (3) new: player 2 has pairs, player 1 doesn't
+  else if (
+    (
+      bothHandsEmpty && 
+      twoPlayerVersionCurrentWinsCounter[1] > twoPlayerVersionCurrentWinsCounter[0]
+    ) || 
+    (
+      twoPlayerVersionCurrentWinsCounter[1] >= 2
+    ) ||
+    (
+      hasPairs[1] && !hasPairs[0]
+    )
+  ) {
+    if (hasPairs[1]) {
+      output += 'Player 2 has drawn a pair, and Player 1 hasn\'t! Player 2 is the automatic winner of all 3 rounds! '
+    } else {
+      output += 'Player 2 is the best player of 3 rounds! '
+    }
+
+    output += 'Click Submit to restart the game.';
+    twoPlayerPairsResetGame();
+  } 
+  // draw condition:
+  // (a) both hands empty, above requirements not met, or
+  // (b) new: both hands have pairs
+  else if (
+    bothHandsEmpty || 
+    (
+      hasPairs[0] && hasPairs[1]
+    )
+  ) {
+    if (bothHandsEmpty) {
+      output += 'Both of you have run out of cards, and there is no best player of 3 rounds! It\s a tie! ';
+    } else {
+      output += 'Both of you have drawn pairs, and it\'s a tie! ';
+    }
+    output += 'Click Submit to restart the game.';
+    twoPlayerPairsResetGame();
+  }
+  // hands not yet empty, continue Best of 3 
+  else {
+    output += 'Click Submit to continue this Best of 3 game.';
+    twoPlayerVersionCardsPlayed = [];
+    twoPlayerVersionMode = PICK_CARDS_MODE;
+  }
+
+  return output;
+}
+
+// Note: we will be re-using most of the functions set up in the
+// original More Comfortable: Moar Cards Low Card 2-Player Mode
+// the exceptions are: pickCardsPairs, viewWinnerPairs, 
+// twoPlayerPairsResetGame
 var moarCardsLowCard2PairsMain = function (input) {
   // Complete the More Comfortable: Moar Cards Low Card 2-Player Mode with Pairs exercise below with moarCardsLowCard2PairsMain as the main function.
-  var myOutputValue = 'hello world';
+  var myOutputValue = '';
+
+  if (twoPlayerVersionMode === DRAW_INITIAL_CARDS_MODE) {
+    myOutputValue = drawInitialHands();
+  } else if (twoPlayerVersionMode === PICK_CARDS_MODE) {
+    // use customised pickCardsPairs
+    myOutputValue = pickCardsPairs();
+  } else if (twoPlayerVersionMode === CARD_SELECTED_MODE) {
+    myOutputValue = cardSelection(input);
+  } else if (twoPlayerVersionMode === VIEW_WINNER_MODE) {
+    myOutputValue = viewWinnerPairs();
+  }
   return myOutputValue;
 };
 
