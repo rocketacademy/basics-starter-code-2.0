@@ -1,8 +1,16 @@
+/**
+ * Follow Along (Loops)
+ */
+
 var followAlongMain = function (input) {
   // Attempt the Follow Along exercise from the Loops module below with followAlongMain as the main function.
   var myOutputValue = 'hello world';
   return myOutputValue;
 };
+
+/**
+ * Simple Loop with Variations (Loops)
+ */
 
 var simpleLoopMain = function (input) {
   // Attempt the Simple Loop with Variations exercise from the Loops module below with simpleLoopMain as the main function.
@@ -18,6 +26,10 @@ var simpleLoopMain = function (input) {
   }
   return myOutputValue;
 };
+
+/**
+ * Loop within Loop (Loops)
+ */
 
 var loopWithinLoopMain = function (input) {
   // Attempt the Loop Within Loop exercise from the Loops module below with loopWithinLoopMain as the main function.
@@ -48,6 +60,10 @@ var loopWithinLoopMain = function (input) {
   return myOutputValue;
 };
 
+/**
+ * Infinite Loop (Loops)
+ */
+
 var infiniteLoopMain = function (input) {
   // Attempt the Infinite Loop exercise from the Loops module below with infiniteLoopMain as the main function.
   var counter = 0;
@@ -57,8 +73,9 @@ var infiniteLoopMain = function (input) {
   return myOutputValue;
 };
 
-// FOR LOOPS
-
+/**
+ * "For loop" variations of the examples above
+ */
 var simpleForLoopMain = function (input) {
   // Initialise counter, declare loop condition, and increment counter in 1 line
   for (var counter = 0; counter < input; counter += 1) {
@@ -91,8 +108,11 @@ var forLoopWithinLoop = function (input) {
 var infiniteForLoopMain = function (input) {
   // Attempt the Infinite Loop exercise from the Loops module below with infiniteLoopMain as the main function.
 
-  //for loops have little chance of going to infinity as its variable, bounds, loop increments are well defined. However... it is still achieveable and discouraged
-
+  // with "for loops", there is more room for human error, because
+  // you will be reminded to (a) initialise a counter, (b) have 
+  // a condition, (c) decrement or increment the counter
+  // however, as seen below, an infinite loop can happen
+  // if input is a positive number
   for (var counter = 0; counter < input; counter -= 1) {
     console.log('hello');
   }
