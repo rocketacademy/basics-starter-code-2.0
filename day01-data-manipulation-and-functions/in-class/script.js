@@ -2,7 +2,7 @@ var fahrenheitToCelsiusMain = function (input) {
   // Complete the Base: Fahrenheit to Celsius exercise below with fahrenheitToCelsiusMain as the main function.
   //var myOutputValue = "hello world";
   var celsius = (input - 32) * (5 / 9);
-  return myOutputValue;
+  return celsius;
 };
 
 var roadTripCostBaseMain = function (input) {
@@ -24,10 +24,10 @@ var roadTripCostBaseMain = function (input) {
   //var TrainCostPerLitre = 2;
 
   // calculate savings in fuel cost between ferrari and train
-  var costSavings = (distanceInMiles / 9) * (2.2 - 2);
+  //var costSavings = (distanceInMiles / 9) * (2.2 - 2);
 
-  var myOutputValue = costSavings;
-  return myOutputValue;
+  //var myOutputValue = costSavings;
+  //return myOutputValue;
 };
 
 var roadTripCostComfortableMain = function (distanceInKM) {
