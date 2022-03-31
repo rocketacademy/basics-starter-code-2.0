@@ -52,6 +52,10 @@ var hawkerFoodCategorisationMain = function (input) {
 
 var fourDSingleDigitMain = function (input) {
   // Complete the Comfortable: 4D with Single-Digit Comparison exercise below with fourDSingleDigitMain as the main function.
+
+  //Generate Random 4D numbers.
+  var numberOne = Math.random() * 10000;
+  console.log(numberOne);
   var myOutputValue = "hello world";
   return myOutputValue;
 };
