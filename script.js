@@ -1,3 +1,5 @@
+/// NEW CHANGES
+
 // 1.  Remember! Global variables exist throughout the program
 // But variables with function scope ONLY exist inside the function when the function runs
 // Let's understand this code
