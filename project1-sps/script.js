@@ -53,7 +53,7 @@ var playNormalGame = function (userName, guess) {
         message = `You chose ${guess}. <br>The computer chose ${compChoice}. <br>You win! <br>You have played ${gamesPlayed} times, and you have won ${winningTimes} times and lost ${losingTimes} times. <br>${continueGameMessage}`;
       } else if (compChoice == "reversed paper") {
         losingTimes += 1;
-        message = `You chose ${guess}??. <br>The computer chose ${compChoice}. <br>You lose. <br>You have played ${gamesPlayed} times, and you have won ${winningTimes} times and lost ${losingTimes} times. <br>${continueGameMessage}`;
+        message = `You chose ${guess}. <br>The computer chose ${compChoice}. <br>You lose. <br>You have played ${gamesPlayed} times, and you have won ${winningTimes} times and lost ${losingTimes} times. <br>${continueGameMessage}`;
       }
     } else if (guess == "reversed paper") {
       console.log(compChoice);
