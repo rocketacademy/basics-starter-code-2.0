@@ -35,12 +35,5 @@ var main = function (playerChoice) {
   ) {
     return `'${playerChoice}' is not a valid move. <br><br>
       Please type 'scissors', 'paper', or 'stone' to play the game.`;
-  } else if (
-    computerChoice !== "scissors" ||
-    computerChoice !== "paper" ||
-    computerChoice !== "stone"
-  ) {
-    return `You played ${playerChoice} but the computer hesitated! What a loser. <br><br>
-    Type 'scissors', 'paper', or 'stone' to play another round.`;
   }
 };
