@@ -16,8 +16,6 @@ var GAME_STATE_DICE_ROLL = "GAME_STATE_DICE_ROLL";
 var GAME_STATE_CHOOSE_DIE_ORDER = "GAME_STATE_CHOOSE_DIE_ORDER";
 var GAME_STATE_COMPARE_SCORES = "GAME_STATE_COMPARE_SCORES";
 var gameState = GAME_STATE_DICE_ROLL;
-var lowestNumberOne = [];
-var gameMode = 1;
 var scores = {
   1: 0,
   2: 0
@@ -91,38 +89,6 @@ var getPlayerScore = function (playerInput) {
   allPlayersScore.push(playerScore);
 
   return "Player " + currentPlayer + ", your chose value is: " + playerScore;
-};
-
-var rollDiceForPlayerGM2 = function () {
-  //Clear current player rolls array
-  currentPlayerRolls = [];
-
-  console.log("CF : start of rollDiceForPlayer()");
-  var counter = 0;
-  var lowestNumber = [];
-  while (counter < 2) {
-    currentPlayerRolls.push(rollDice());
-    counter = counter + 1;
-  }
-  if (currentPlayerRolls[0] > currentPlayerRolls[1]) {
-    lowestNumber =
-      currentPlayerRolls[1].toString() + currentPlayerRolls[0].toString();
-  } else {
-    lowestNumber =
-      currentPlayerRolls[0].toString() + currentPlayerRolls[1].toString();
-  }
-  lowestNumberOne.push(lowestNumber);
-  console.log("rollDiceForPlayer changes, playerRolls: ", currentPlayerRolls);
-  return (
-    "Welcome, Player" +
-    currentPlayer +
-    "<br><br>You rolled:<br>Dice 1: " +
-    currentPlayerRolls[0] +
-    " | Dice 2: " +
-    currentPlayerRolls[1] +
-    "<br><br>Your lowest roll is " +
-    lowestNumber
-  );
 };
 
 // MAIN FUNCTION
