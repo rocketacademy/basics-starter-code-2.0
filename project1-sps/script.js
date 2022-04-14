@@ -14,7 +14,7 @@ var main = function (input) {
       return "Stone";
     }
     // I just randomly use stone as default
-    return "Stone";
+    return "stone";
   };
   //Assign outcome result from rollsps function to a variable name comp
 
