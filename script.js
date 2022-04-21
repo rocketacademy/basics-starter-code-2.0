@@ -78,39 +78,39 @@
 //   return computerMove;
 // };
 
-//Default output
-var myOutputValue = `Hello World`;
-//get auto generated Computer move
-var main = function (player) {
-  // Generate a decimal from 0 through 3, inclusive of 0 and exclusive of 3.
-  var randomNum = Math.random() * 3;
-  // Remove the decimal with the floor operation.
-  // This will be an integer from 0 to 3 inclusive.
-  var randomRound = Math.floor(randomNum);
-  // Add 1 to get valid result of 1 through 3 inclusive.
-  var comMove = randomRound + 1;
-  if (comMove == 1) {
-    comMove = `Scissor`;
-  } else if (comMove == 2) {
-    comMove = `Paper`;
-  } else {
-    comMove = `Stone`;
-  }
+// //Default output
+// var myOutputValue = `Hello World`;
+// //get auto generated Computer move
+// var main = function (player) {
+//   // Generate a decimal from 0 through 3, inclusive of 0 and exclusive of 3.
+//   var randomNum = Math.random() * 3;
+//   // Remove the decimal with the floor operation.
+//   // This will be an integer from 0 to 3 inclusive.
+//   var randomRound = Math.floor(randomNum);
+//   // Add 1 to get valid result of 1 through 3 inclusive.
+//   var comMove = randomRound + 1;
+//   if (comMove == 1) {
+//     comMove = `Scissor`;
+//   } else if (comMove == 2) {
+//     comMove = `Paper`;
+//   } else {
+//     comMove = `Stone`;
+//   }
 
-  //Logic on Cases
-  if (comMove === player) {
-    myOutputValue = `You choose ${player} ! AI choose ${comMove} ! It is a draw! `;
-  } else if (
-    (player === `Scissor` && comMove === `Paper`) ||
-    (player === `Paper` && comMove === `Stone`) ||
-    (player === `Stone` && comMove === `Scissor`)
-  ) {
-    myOutputValue = `You choose ${player} ! AI choose ${comMove} ! You Win! `;
-  } else {
-    myOutputValue = `You choose ${player} ! AI choose ${comMove} ! You Lose! `;
-  }
-  return myOutputValue;
-};
+//   //Logic on Cases
+//   if (comMove === player) {
+//     myOutputValue = `You choose ${player} ! AI choose ${comMove} ! It is a draw! `;
+//   } else if (
+//     (player === `Scissor` && comMove === `Paper`) ||
+//     (player === `Paper` && comMove === `Stone`) ||
+//     (player === `Stone` && comMove === `Scissor`)
+//   ) {
+//     myOutputValue = `You choose ${player} ! AI choose ${comMove} ! You Win! `;
+//   } else {
+//     myOutputValue = `You choose ${player} ! AI choose ${comMove} ! You Lose! `;
+//   }
+//   return myOutputValue;
+// };
 
 // var main = function (input) {
 //   // Generate a random move
@@ -131,3 +131,37 @@ var main = function (player) {
 
 // 3 > 1 Win
 // 3 <2 Lost
+
+var rollDice = function () {
+  // produce a decimal between 0 and 6
+  var randomDecimal = Math.random() * 6;
+  // remove the decimal
+  var randomInteger = Math.floor(randomDecimal);
+  // add 1 to get a number between 1 and 6 inclusive
+  var diceNumber = randomInteger + 1;
+  return diceNumber;
+};
+
+var main = function (input) {
+  var myOutputValue = "";
+
+  // first check if input is a number
+  if (Number.isNaN(Number(input)) == true) {
+    myOutputValue = "sorry please enter a number.";
+  } else {
+    // then check if input is between 1 and 6
+    if (input < 1 || input > 6) {
+      myOutputValue = "sorry please enter a number from 1 - 6";
+    } else {
+      // the input is 1-6, go ahead with the dice game
+      var randomDiceNumber = rollDice();
+      if (randomDiceNumber == input) {
+        myOutputValue = "you win";
+      } else {
+        myOutputValue = "you lose";
+      }
+    }
+  }
+
+  return myOutputValue;
+};
