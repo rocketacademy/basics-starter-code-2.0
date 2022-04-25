@@ -48,7 +48,7 @@ var rollDiceForPlayer = function () {
   }
   console.log("rollDiceForPlayer changes, playerRolls: ", currentPlayerRolls);
   return (
-    "Welcome, Player" +
+    "Welcome my friend, Player" +
     currentPlayer +
     "<br><br>You rolled:<br>Dice 1: " +
     currentPlayerRolls[0] +
@@ -147,7 +147,7 @@ var main = function (input) {
       scores[2] += 1;
       outputMessage =
         outputMessage +
-        "<br><br>Player 1 wins! <br><br>Player 1 wins " +
+        "<br><br>Player 2 wins! <br><br>Player 1 wins " +
         scores[1] +
         "<br>Player 2 wins " +
         scores[2];
