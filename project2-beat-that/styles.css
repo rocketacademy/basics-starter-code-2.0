@@ -12,7 +12,8 @@ body {
   font-family: sans-serif;
   margin-left: 30px;
   margin-right: 30px;
-  background-color: #e0e0e0;
+  background-color: #22831f;
+  <p style="background-image: url('img_girl.jpg');">
 }
 
 nav {
@@ -57,7 +58,7 @@ nav ul li a {
 }
 
 .container {
-  background-color: #ffffff;
+  background-color: #76db48;
   margin: 40px auto;
   max-width: 800px;
   padding: 38px 31px;
